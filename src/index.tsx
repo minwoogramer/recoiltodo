@@ -3,17 +3,19 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { RecoilRoot } from 'recoil';
-import { ThemeProvider } from 'styled-components';
-import { darkTheme } from './style/theme';
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
+const rootNode = document.getElementById('root');
+
+
+
+if (!rootNode) throw new Error('Failed to find the root element');
+
+ReactDOM.createRoot(rootNode).render(
+  
   <React.StrictMode>
     <RecoilRoot>
-      <ThemeProvider theme={darkTheme}>
+  
     <App />
-    </ThemeProvider>
+ 
     </RecoilRoot>
   </React.StrictMode>
 );
